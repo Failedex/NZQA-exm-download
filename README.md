@@ -6,7 +6,7 @@ While you could download past exams via "Download files as zip", this method has
 
 Using the unmatched power of regex and 4 lines of cocain, I wrote this script (in 10 minutes or so) that would download **all** of the pastexams of a topic. 
 
-I also made it so that it only installs the relevant papers (exam and schedules), so it's also significantly faster than downloading their zip files
+I also made it so that it only download the relevant papers (exam and schedules), so it's also significantly faster than downloading their zip files
 
 ## "Installing"
 People with git will know exactly how to `git clone` so I'll leave you be
