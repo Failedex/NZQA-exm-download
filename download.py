@@ -29,9 +29,27 @@ def get_links(url, dir):
             with open(join(dir, name), "wb") as f: 
                 f.write(res.content)
 
+def get_links_v2(code, dir): 
+    for year in range(2013, 2023, 1): 
+        print(year)
+
+        # exm
+        name = f"{code}-exm-{str(year)}.pdf"
+        res = requests.get(f"https://www.nzqa.govt.nz/nqfdocs/ncea-resource/exams/{str(year)}/{name}")
+        with open(join(dir, name), "wb") as f: 
+            f.write(res.content)
+
+        # schedule
+        name = f"{code}-ass-{str(year)}.pdf"
+        res = requests.get(f"https://www.nzqa.govt.nz/nqfdocs/ncea-resource/schedules/{str(year)}/{name}")
+        with open(join(dir, name), "wb") as f: 
+            f.write(res.content)
+
 if __name__ == "__main__": 
     code = input("assestment code: ")
     dir = input("topic: ")
     if not isdir(dir):
         mkdir(dir)
-    get_links("https://www.nzqa.govt.nz/ncea/assessment/view-detailed.do?standardNumber="+code, dir)
+    # get_links("https://www.nzqa.govt.nz/ncea/assessment/view-detailed.do?standardNumber="+code, dir)
+
+    get_links_v2(code, dir)
